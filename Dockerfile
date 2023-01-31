@@ -9,7 +9,7 @@ RUN useradd -r -s /bin/false sol
 # RUN go install github.com/willejs/go-hello-world
 # RUN go mod init goserver
 # RUN go build goserver
-RUN go install github.com/soladen2010/go_server
+RUN go install github.com/soladen2010/go_server@latest
 
 # Run the service
 ENTRYPOINT /go/bin/goserver
