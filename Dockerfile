@@ -8,7 +8,6 @@ RUN useradd -r -s /bin/false sol
 # RUN go get github.com/willejs/go-hello-world
 # RUN go install github.com/willejs/go-hello-world
 RUN go mod init goserver
-RUN go mod tidy
 RUN go build goserver
 
 # Run the service
