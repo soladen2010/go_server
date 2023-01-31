@@ -3,13 +3,16 @@
 FROM golang
 
 # create the user
-RUN useradd -r -s /bin/false helloworld
+RUN useradd -r -s /bin/false sol
 # Go get and build
-RUN go get github.com/willejs/go-hello-world
-RUN go install github.com/willejs/go-hello-world
+# RUN go get github.com/willejs/go-hello-world
+# RUN go install github.com/willejs/go-hello-world
+RUN go mod init goserver
+RUN go mod tidy
+RUN go build goserver
 
 # Run the service
-ENTRYPOINT /go/bin/go-hello-world
+ENTRYPOINT /go/bin/goserver
 
 # Document that the service listens on port 8080.
 EXPOSE 8484
