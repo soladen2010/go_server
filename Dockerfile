@@ -12,7 +12,7 @@ RUN useradd -r -s /bin/false sol
 RUN go install github.com/soladen2010/go_server@latest
 
 # Run the service
-ENTRYPOINT /go/bin/goserver
+ENTRYPOINT /go/bin/go_server
 
 # Document that the service listens on port 8080.
 EXPOSE 8484
